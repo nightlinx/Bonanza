@@ -1,0 +1,82 @@
+<!DOCTYPE  html>
+<html lang='pl'>
+<head>
+	<meta charset='utf-8'>
+	<title>Twoj blog</title>
+	<script> src='modernizr-2.0.6.js' </script>
+	<script> src='dodajWpisSc' </script>
+	<link href='style.css' rel='stylesheet'/>
+</head>
+
+<body background="forest.jpg">
+<header>
+	<h1>Witaj w najlepszym generatorze blogow na swiecie!</h1>
+</header>
+	<div class='Content'>
+		<h2>Twoje wpisy na blogu</h2>
+		<div id='pageContainer'>
+		<aside class='NavSidebar'>
+			<div class='Icon'>
+				<img src='openBook.png' alt='open-book'>
+			</div>
+			<nav>
+				<button class="button buttonOption" onclick="location.href = 'dodajWpis.html';">Nowy wpis</button>
+				<button class="button buttonOption" onclick="location.href = 'blog.html';">Twoje wpisy</button>	
+				<button class="button buttonOption" onclick="clearLocalStorage()">Wyczysc bloga</button>					
+			</nav>
+		</aside>
+		<div id='allPosts'>
+		</div>
+		</div>
+	</div>
+	
+	
+	<script>
+		/*var postTitle1 = document.getElementsByClassName("Title");
+		var postTags1 = document.getElementsByClassName("Tags");
+		var postContent1 = document.getElementsByClassName("Post");
+		postTitle1[0].innerHTML = localStorage['post_title'];
+		postTags1[0].innerHTML = localStorage['post_tags'];
+		postContent1[0].innerHTML = localStorage['post_content'];
+*/
+
+		var myDivAllPosts = document.getElementById("allPosts");
+		
+
+		for(var i=0; i<50; i++){
+
+			var s1 = 'post_title' + i;
+			var s2 = 'post_tags' + i;
+			var s3 = 'post_content' + i;
+			
+			var	post = document.createElement("article");
+		
+			var title = document.createElement("h3");
+			var tags = document.createElement("p");
+			var content = document.createElement("div");
+
+			
+			if(typeof(localStorage[s1]) !== "undefined"){
+				var postTitle = document.createTextNode(localStorage[s1]);
+				var postTags = document.createTextNode(localStorage[s2]);
+				var postContent = document.createTextNode(localStorage[s3]);
+		
+				title.appendChild(postTitle);
+				tags.appendChild(postTags);
+				content.appendChild(postContent);
+		
+				post.appendChild(title);
+				post.appendChild(tags);
+				post.appendChild(content);
+		
+				myDivAllPosts.append(post);
+			}
+		}
+		function clearLocalStorage(){
+			localStorage.clear();
+			location.reload(); 
+		}
+	</script>
+</body>
+
+</html>

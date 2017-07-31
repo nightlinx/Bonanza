@@ -1,0 +1,250 @@
+body {
+	font-family: Century Gothic;
+	background-color: #f9f9f9;
+	margin: 0px;
+}
+
+header h1{
+	font-weight: normal;
+	background-color: #404040;
+	padding: 10px;
+	color: #f2f2f2;
+	text-align: center;
+	margin: 0px;
+	width: auto;
+	font-size: 20px;
+}
+
+.Content {
+	display: block;
+	width: 1000px;
+	min-height: 500px;
+	background-color: white;
+	margin: auto;
+	font-family: Century Gothic;
+	background-color: #f9f9f9;
+}
+.Content h2{
+	font-weight: normal;
+	display: block;
+	color: white;
+	text-align: center;
+	font-size: 30px;
+	padding: 30px;
+	margin-bottom: 20px;
+	letter-spacing: 2px;
+	border-bottom: 0px solid #a5a5a5;
+	background-color: #716f8e;
+	box-shadow: 1px 2px 2px 1px rgba(0, 0, 0, 0.05), 2px 2px 2px 1px rgba(0, 0, 0, 0.05);
+}
+
+#pageContainer{
+	overflow: auto;
+}
+
+aside.NavSidebar{
+	width: 30%;
+	left: 0px;
+	padding: 5px 15px 5px 15px;
+	min-height: 1500px;
+	background-color: white;
+	margin: 10px 0px 10px 0px;
+	border-right: 0px solid #a5a5a5;
+	width: 180px;
+	float: left;
+	box-shadow: 1px 2px 2px 1px rgba(0, 0, 0, 0.05), 2px 2px 2px 1px rgba(0, 0, 0, 0.05);
+}
+
+aside.NavSidebar img{
+	display: block;
+	margin: 20px auto 40px auto;
+	width: 80%;
+}
+
+.button {
+    background-color: #5f5d7c; 
+    border: none;
+    padding: 10px 10px;
+    text-align: center;
+    text-decoration: none;
+	width: auto;
+    font-size: 16px;
+    margin: 2px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+	border-radius: 4px;
+	letter-spacing: 1px;
+}
+
+.buttonOption {
+	display: block;
+    background-color: white;
+    color: black;
+	margin: 10px auto 10px auto;
+	width: 140px;
+	border: 1px solid #8c8c8c;
+}
+
+.button:hover {
+    background-color: #404040;
+    color: white;
+}
+
+.buttonOption:hover {
+    background-color: #5f5d7c;
+    color: white;
+}
+
+.buttonSubmit{
+	display: block;
+	color: white;
+	margin: 30px auto 10px auto;
+	width: 30%;
+	border-radius: 4px;
+	padding: 10px 10px;
+}
+
+form{
+	display: block;
+	padding: 0px 15px;
+	margin: 10px 15px 15px 18px;
+	width: 70%;
+	border: 0px solid black;
+	display: inline-block;
+	float: left;
+}
+fieldset{
+	padding: 50px 40px 20px 40px;
+	border: 0px solid white;
+	background-color: white;
+	box-shadow: 1px 2px 2px 1px rgba(0, 0, 0, 0.05), 2px 2px 2px 1px rgba(0, 0, 0, 0.05);
+}
+
+fieldset input {
+	display: block;
+	margin: 10px auto 0px auto;
+	width: 90%;
+	padding: 10px;
+	border: none;
+	border-top: 1px solid #a5a5a5;
+	border-bottom: 1px solid #a5a5a5;
+	font-family: Century Gothic;
+	font-weight: bold;
+}
+
+fieldset textarea{
+	border-color: #f4f4f4;
+	display: block;
+	margin: 25px auto 25px auto;
+	width: 90%;
+	padding: 10px;
+	border-top: 1px solid #a5a5a5;
+	border-bottom: 1px solid #a5a5a5;
+	border-left: none;
+	border-right: none;
+	resize: vertical;
+	max-height: 1500px;	
+	background-color: white;
+	font-family: Century Gothic;
+	font-size: 15px;
+}
+
+fieldset input:invalid{
+	box-shadow: none;
+}
+
+fieldset input.titleForm{
+	font-size: 20px;
+}
+
+fieldset input:hover, :focus{
+	background-color: #f9f9f9;
+}
+
+fieldset input:focus{
+	border-top: 3px solid #5f5d7c;
+	border-bottom: 3px solid #5f5d7c;
+}
+
+fieldset textarea:hover, :focus{
+	background-color: #f9f9f9;
+}
+
+fieldset textarea:focus{
+	border-top: 3px solid #5f5d7c;
+	border-bottom: 3px solid #5f5d7c;
+}
+
+
+fieldset textarea:invalid{
+	box-shadow: none;	
+}
+
+
+article{
+	display: block;
+	padding: 0px 15px;
+	margin: 10px 15px 15px 18px;
+	width: 70%;
+	border: 0px solid black;
+	display: inline-block;
+	float: left;
+    transition-duration: 0.4s;
+}
+
+article h3{
+	color: black;
+	text-transform: uppercase;
+	display: block;
+	padding: 20px;
+	margin: 0px 10px;
+	margin-bottom: 0px;
+	background-color: white;
+	text-align: center;
+	letter-spacing: 1px;
+    font-size: 20px;
+	box-shadow: 1px 2px 2px 1px rgba(0, 0, 0, 0.05), 2px 2px 2px 1px rgba(0, 0, 0, 0.05);
+}
+
+article p{
+	display: block;
+	padding: 10px;
+	margin: 10px;
+	margin-top: 0px;
+	background-color: white;
+	text-align: center;
+	color: #878787;
+	box-shadow: 1px 2px 2px 1px rgba(0, 0, 0, 0.05), 1px 2px 2px 1px rgba(0, 0, 0, 0.05);
+}
+
+article div{
+	display: block;
+	padding: 25px;
+	margin: 10px;
+	margin-top: 0px;
+	background-color: white;
+	text-indent: 10%;
+	color: #333333;
+	box-shadow: 1px 2px 2px 1px rgba(0, 0, 0, 0.05), 1px 2px 2px 1px rgba(0, 0, 0, 0.05);
+}
+
+
+/*
+light purple
+#878787
+
+purple
+#5f5d7c
+
+light light grey
+#a5a5a5
+
+light grey
+#333333
+
+grey
+#404040
+*/
+
+

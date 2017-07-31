@@ -1,0 +1,71 @@
+<!DOCTYPE  html>
+<html lang='pl'>
+<head>
+	<meta charset='utf-8'>
+	<title>Dodaj wpis</title>
+	<script> src='modernizr-2.0.6.js' </script>
+	<script> src='dodajWpisSc' </script>
+	<link href='style.css' rel='stylesheet'/>
+</head>
+
+<body background="forest.jpg">
+	<header>
+		<h1>Witaj w najlepszym generatorze blogow na swiecie!</h1>
+	</header>
+	<div class='Content'>
+		<h2>Generuj nowy wpis</h2>
+		<div id='pageContainer'>
+		<aside class='NavSidebar'>
+			<div class='Icon'>
+				<img src='openBook.png' alt='open-book'>
+			</div>
+			<nav>
+				<button class="button buttonOption" onclick="location.href = 'dodajWpis.html';">Nowy wpis</button>
+				<button class="button buttonOption" onclick="location.href = 'blog.html';">Twoje wpisy</button>
+				<button class="button buttonOption" onclick="clearLocalStorage()">Wyczysc bloga</button>				
+			</nav>
+		</aside>
+		<form onsubmit="savePost()"> 
+			<fieldset>
+				<input class='titleForm' id='title' placeholder='Tytul' required autofocus></br>
+				<input id='tags' placeholder='Tagi'></br>
+				<textarea id='post' placeholder='Wpis...' rows='10' required></textarea></br>
+			</fieldset>
+			<input class='button buttonSubmit' type='submit' value="Dodaj post">
+		</form>
+		</div>
+	</div>
+	
+	<script>
+		function savePost() {
+			var titleInput = document.getElementById('title');
+			var tagsInput = document.getElementById('tags');
+			var postInput = document.getElementById('post');
+			
+			if(localStorage['post_id'] == null){
+				var n = 1;
+				localStorage['post_id'] = n;
+			}
+			else{
+				localStorage['post_id'] = Number(localStorage['post_id']) + 1;
+			}
+			
+			var s1 = 'post_title' + localStorage['post_id'];
+			var s2 = 'post_tags' + localStorage['post_id'];
+			var s3 = 'post_content' + localStorage['post_id'];
+			
+			localStorage[s1] = titleInput.value;
+			localStorage[s2] = tagsInput.value;
+			localStorage[s3] = postInput.value;
+			
+			//alert("Post o nazwie " + s1 + " zostal zapisany :)");
+			
+		}
+		function clearLocalStorage(){
+			localStorage.clear();
+			location.reload(); 
+		}
+	</script>
+</body>
+
+</html>

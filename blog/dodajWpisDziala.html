@@ -1,0 +1,98 @@
+<!DOCTYPE  html>
+<html lang='pl'>
+<head>
+	<meta charset='utf-8'>
+	<title>Twoj blog</title>
+	<script> src='modernizr-2.0.6.js' </script>
+	<script> src='dodajWpisSc' </script>
+	<link href='style.css' rel='stylesheet'/>
+</head>
+
+<body background="forest.jpg">
+<header>
+	<h1>Witaj w najlepszym generatorze blogow na swiecie!</h1>
+</header>
+	<div class='Content'>
+		<h2>Twoje wpisy na blogu</h2>
+		<div id='pageContainer'>
+		<aside class='NavSidebar'>
+			<div class='Icon'>
+				<img src='openBook.png' alt='open-book'>
+			</div>
+			<nav>
+				<button class="button buttonOption" onclick="location.href = 'dodajWpis.html';">Nowy wpis</button>
+				<button class="button buttonOption" onclick="location.href = 'blog.html';">Twoje wpisy</button>				
+			</nav>
+		</aside>
+		<div id='allPosts'>
+			<article>
+				<h3 class='Title'>Nullam accumsan ac sem nec ultricies</h3>
+				<p class='Tags'>#Lorem #ipsum #dolor #sit</p>
+				<div class='Post'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra condimentum sapien quis euismod.
+				Aenean molestie nulla ullamcorper blandit commodo. Fusce id dolor eget nibh elementum ornare. Curabitur quis suscipit nisi.
+				Quisque faucibus eros quis erat eleifend, sed egestas sapien pellentesque. <br> Sed ac odio pellentesque, hendrerit odio eget, pharetra tellus.
+				Sed ac dolor euismod, laoreet nunc ut, dignissim nisl. Mauris vel aliquet mi. Pellentesque tortor metus, malesuada nec maximus quis,
+				venenatis nec neque. Fusce luctus placerat posuere. Nam vitae convallis erat. Vestibulum a mi at sapien dignissim viverra.
+				</div>
+			</article>
+			<article>
+				<h3>Vivamus varius tellus nisi, eget rutrum justo vestibulum nec</h3>
+				<p class='Tags'>#Pellentesque #eu #porta #est #dolre #situte</p>
+				<div class='Post'> Nullam accumsan ac sem nec ultricies. Sed consequat vulputate sem in condimentum.
+				Nulla vel diam a dui facilisis ultrices vel in quam.<br>Phasellus eu eleifend lacus, ac sagittis nulla.
+				Duis scelerisque nunc ac ligula posuere porta vel interdum purus. Aliquam eget arcu quis dolor dignissim
+				laoreet ut nec lacus. egestas sapien pellentesque. Sed ac odio pellentesque, hendrerit odio eget, pharetra
+				tellus. Sed ac dolor euismod, laoreet nunc ut, dignissim nisl. Mauris vel aliquet mi. Pellentesque tortor metus, malesuada
+				nec maximus quis, venenatis nec neque. Fusce luctus placerat posuere. Nam vitae convallis erat. Vestibulum a mi at sapien
+				dignissim viverra.
+				</div>
+			</article>
+		</div>
+		</div>
+	</div>
+	
+	
+	<script>
+		/*var postTitle1 = document.getElementsByClassName("Title");
+		var postTags1 = document.getElementsByClassName("Tags");
+		var postContent1 = document.getElementsByClassName("Post");
+		postTitle1[0].innerHTML = localStorage['post_title'];
+		postTags1[0].innerHTML = localStorage['post_tags'];
+		postContent1[0].innerHTML = localStorage['post_content'];
+*/
+		for(var i=0; i<50; i++){
+			
+		}
+
+
+		var s1 = 'post_title' + localStorage['post_id'];
+		var s2 = 'post_tags' + localStorage['post_id'];
+		var s3 = 'post_content' + localStorage['post_id'];
+		
+		var myDivAllPosts = document.getElementById("allPosts");
+		
+		var	post = document.createElement("article");
+		
+		var title = document.createElement("h3");
+		var tags = document.createElement("p");
+		var content = document.createElement("div");
+		
+		var postTitle = document.createTextNode(localStorage[s1]);
+		var postTags = document.createTextNode(localStorage[s2]);
+		var postContent = document.createTextNode(localStorage[s3]);
+		
+		title.appendChild(postTitle);
+		tags.appendChild(postTags);
+		content.appendChild(postContent);
+		
+		post.appendChild(title);
+		post.appendChild(tags);
+		post.appendChild(content);
+		
+		myDivAllPosts.append(post);
+		
+		alert("Local storage tytul " + localStorage[s1]);
+	</script>
+</body>
+
+</html>
