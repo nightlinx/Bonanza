@@ -1,18 +1,25 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Item } from './classes/item';
-
-const ITEMS: Item[] = [
-  { id: 1, title: 'Mr. Nice', category: 'game', medium: 'physical' },
-  { id: 2, title: 'Game for you', category: 'game', medium: 'digital' },
-  { id: 3, title: 'Crossroad', category: 'album', medium: 'physical' }
-];
+import { ItemService } from './services/item.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
   title = 'All your games and albums';
-  items = ITEMS;
+  items: Item[];
+
+  constructor(private itemService: ItemService) {
+    console.log("constructor(private itemService: ItemService) ");
+  }
+
+  getItems(): void {
+    this.itemService.getItems().then(items => this.items = items);
+  }
+
+  ngOnInit(): void {
+    this.getItems();
+  }
 }
