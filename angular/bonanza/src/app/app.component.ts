@@ -1,4 +1,10 @@
 import { Component } from '@angular/core';
+//import { Item } from '../classes/item';
+
+export class Item {
+  id: number;
+  title: string;
+}
 
 @Component({
   selector: 'app-root',
@@ -6,5 +12,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  title = 'All your games and albums';
+  item: Item ={
+    id: 1,
+    title: 'hello game'
+  };
 }
