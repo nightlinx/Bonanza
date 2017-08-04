@@ -7,12 +7,13 @@ import 'rxjs/add/operator/toPromise'; //importing toPromise from the RxJS librar
 
 @Injectable()
 export class ItemService {
-  private heroesUrl = 'api/items';  // URL to web api
+  private itemsUrl = 'api/items';  // URL to web api
+  private headers = new Headers({'Content-Type': 'application/json'});
 
   constructor(private http: Http) { }
 
   getItems(): Promise<Item[]> {
-    return this.http.get(this.heroesUrl)  //The Angular http.get returns an RxJS Observable
+    return this.http.get(this.itemsUrl)  //The Angular http.get returns an RxJS Observable
                .toPromise()   //you've converted the Observable to a Promise
                .then(response => response.json().data as Item[])  //call the json method of the HTTP Response to extract the data within the response.
                //The response JSON has a single data property, which holds the array of items that the caller wants.
@@ -20,10 +21,19 @@ export class ItemService {
   }
 
   getItem(id: number): Promise<Item> {
-    const url = `${this.heroesUrl}/${id}`;
+    const url = `${this.itemsUrl}/${id}`;
     return this.http.get(url)
       .toPromise()
       .then(response => response.json().data as Item)
+      .catch(this.handleError);
+  }
+
+  create(title: string): Promise<Item> {
+    console.log("'create' function in itemService");
+    return this.http
+      .post(this.itemsUrl, JSON.stringify({title: title}), {headers: this.headers})
+      .toPromise()
+      .then(res => res.json().data as Item)
       .catch(this.handleError);
   }
 

@@ -6,11 +6,20 @@
       <th>Category</th>
       <th>Medium</th>
     </tr>
+    <tr>
+      <td>
+        <button (click)="add(itemTitle.value); itemTitle.value=''">Add</button>
+      </td>
+      <td><input #itemTitle /></td>
+      <td><input #itemCategory /></td>
+      <td><input #itemMedium /></td>
+    </tr>
     <tr *ngFor="let item of items">
       <td>{{item.id}}</td>
       <td>{{item.title}}</td>
       <td>{{item.category}}</td>
       <td>{{item.medium}}</td>
     </tr>
+
   </table>
 </div>
