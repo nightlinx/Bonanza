@@ -28,10 +28,10 @@ export class ItemService {
       .catch(this.handleError);
   }
 
-  create(title: string): Promise<Item> {
+  create(title: string, category: string, medium: string): Promise<Item> {
     console.log("'create' function in itemService");
     return this.http
-      .post(this.itemsUrl, JSON.stringify({title: title}), {headers: this.headers})
+      .post(this.itemsUrl, JSON.stringify({title: title, category: category, medium: medium}), {headers: this.headers})
       .toPromise()
       .then(res => res.json().data as Item)
       .catch(this.handleError);

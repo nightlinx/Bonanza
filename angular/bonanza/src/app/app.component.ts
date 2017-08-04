@@ -19,15 +19,18 @@ export class AppComponent implements OnInit{
     this.itemService.getItems().then(items => this.items = items);
   }
 
-  add(title: string): void {
+  add(title: string, category: string, medium: string): void {
     title = title.trim();
+    category = category.trim();
+    medium = medium.trim();
+
     console.log("tytul gry: "+ title);
     console.log(this.items);
     if (!title) {
       return;
     }
 
-    this.itemService.create(title) //the handler delegates creation of the named hero to the hero service
+    this.itemService.create(title, category, medium) //the handler delegates creation of the named hero to the hero service
       .then(item => {
         this.items.unshift(item); //and then adds the new hero to the array
     });

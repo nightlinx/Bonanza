@@ -8,7 +8,7 @@
     </tr>
     <tr>
       <td>
-        <button (click)="add(itemTitle.value); itemTitle.value=''">Add</button>
+        <button (click)="add(itemTitle.value, itemCategory.value, itemMedium.value); itemTitle.value=''; itemCategory.value=''; itemMedium.value=''">Add</button>
       </td>
       <td><input #itemTitle /></td>
       <td><input #itemCategory /></td>
