@@ -11,8 +11,18 @@
         <button (click)="add(itemTitle.value, itemCategory.value, itemMedium.value); itemTitle.value=''; itemCategory.value=''; itemMedium.value=''">Add</button>
       </td>
       <td><input #itemTitle /></td>
-      <td><input #itemCategory /></td>
-      <td><input #itemMedium /></td>
+      <td>
+        <select #itemCategory>
+          <option value="game">game</option>
+          <option value="album">album</option>
+        </select>
+      </td>
+      <td>
+        <select #itemMedium >
+          <option value="digital">digital</option>
+          <option value="physical">physical</option>
+        </select>
+      </td>
     </tr>
     <tr *ngFor="let item of items">
       <td>{{item.id}}</td>
