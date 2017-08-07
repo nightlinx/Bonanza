@@ -28,7 +28,7 @@
         </select>
       </td>
       <td>
-        <button (click)="add(itemTitle.value, itemCategory.value, itemMedium.value); itemTitle.value=''; itemCategory.value=''; itemMedium.value=''">Add</button>
+        <button (click)="add(itemTitle.value, itemCategory.value, itemMedium.value); itemTitle.value=''; itemCategory.value=''; itemMedium.value=''; myInput.value=''">Add</button>
       </td>
     </tr>
     <tr *ngFor="let item of filteredItems">

@@ -35,7 +35,7 @@ export class AppComponent implements OnInit{
     this.itemService.create(title, category, medium) //the handler delegates creation of the named hero to the hero service
       .then(item => {
         this.items.unshift(item); //and then adds the new item to the array
-        this.filteredItems.unshift(item);
+        this.assignCopy();
     });
     console.log(this.items);
     this.saveItem(this.itemService.create(title, category, medium));
@@ -54,9 +54,9 @@ export class AppComponent implements OnInit{
         .delete(item.id)
         .then(() => {
           this.items = this.items.filter(h => h !== item);
+          this.assignCopy();
         });
   }
-
 /*
   getAlbums(){
     this.filteredItems = Object.assign([], this.items).filter(item => item.category === 'album');
@@ -70,7 +70,7 @@ assignCopy(){
    this.filteredItems = Object.assign([], this.items);
 }
 filterItem(value){
-   if(!value) this.assignCopy(); //when nothing has typed
+   if (!value) this.assignCopy(); //when nothing has typed
    this.filteredItems = Object.assign([], this.items).filter(
       item => item.title.toLowerCase().indexOf(value.toLowerCase()) > -1
    )
