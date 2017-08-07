@@ -1,15 +1,65 @@
-table {
+div {
     font-family: arial, sans-serif;
+}
+
+.information {
+  font-size: 30px;
+  text-align: center;
+}
+
+#itemSearcher {
+  display: block;
+  margin: 0px auto 10px auto;
+  padding: 5px;
+  font-size: 15px;
+  width: 250px;
+}
+
+table {
     border-collapse: collapse;
     width: 100%;
 }
 
-td, th {
+table th{
     border: 1px solid #dddddd;
-    text-align: left;
+    background-color: #f4f2f2;
+    text-align: center;
     padding: 8px;
 }
 
-th {
-    background-color: #f4f2f2;
+table td{
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 5px;
+}
+
+.itemId{
+    width: 5%;
+}
+.itemTitle{
+    width: 60%;
+}
+.itemCategory{
+    width: 15%;
+}
+.itemMedium{
+    width: 15%;
+}
+.itemOperation{
+  width: 5%;
+}
+
+table td button, table td select {
+    padding: 3px;
+    width: 100%;
+}
+
+table td input {
+  box-sizing: border-box; /*genialne! Inaczej input wychodzi poza tabelke*/
+  width: 100%;
+  padding: 5px;
+}
+
+table td button {
+  width: 40px;
 }

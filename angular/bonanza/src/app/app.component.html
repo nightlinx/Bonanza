@@ -1,36 +1,45 @@
-<div>
+<div style="overflow-x:auto;">
+<!--  <button (click)="getAll()">all</button>
+  <button (click)="getAlbums()">albums</button>
+-->
+<h1 class="information">Search your item!</h1>
+<input id="itemSearcher" #myInput placeholder="Item title..." [(ngModel)]="name" (input)="filterItem(myInput.value)"/>
   <table>
     <tr>
-      <th>Id</th>
-      <th>Title</th>
-      <th>Category</th>
-      <th>Medium</th>
+      <th class="itemId">Id</th>
+      <th class="itemTitle">Title</th>
+      <th class="itemCategory">Category</th>
+      <th class="itemMedium">Medium</th>
+      <th class="itemOperation">Do</th>
     </tr>
     <tr>
-      <td>
-        <button (click)="add(itemTitle.value, itemCategory.value, itemMedium.value); itemTitle.value=''; itemCategory.value=''; itemMedium.value=''">Add</button>
-      </td>
+      <td></td>
       <td><input #itemTitle /></td>
       <td>
-        <select #itemCategory>
+        <select #itemCategory required>
           <option value="game">game</option>
           <option value="album">album</option>
         </select>
       </td>
       <td>
-        <select #itemMedium >
+        <select #itemMedium required>
           <option value="digital">digital</option>
           <option value="physical">physical</option>
         </select>
       </td>
+      <td>
+        <button (click)="add(itemTitle.value, itemCategory.value, itemMedium.value); itemTitle.value=''; itemCategory.value=''; itemMedium.value=''">Add</button>
+      </td>
     </tr>
-    <tr *ngFor="let item of items">
+    <tr *ngFor="let item of filteredItems">
       <td>{{item.id}}</td>
       <td>{{item.title}}</td>
       <td>{{item.category}}</td>
       <td>{{item.medium}}</td>
-      <button class="delete"
+      <td>
+        <button class="delete"
         (click)="delete(item); $event.stopPropagation()">x</button>
+      </td>
     </tr>
 
   </table>

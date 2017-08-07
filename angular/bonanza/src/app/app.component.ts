@@ -10,13 +10,14 @@ import { ItemService } from './services/item.service';
 export class AppComponent implements OnInit{
   title = 'All your games and albums';
   items: Item[];
+  filteredItems: Item[];
 
   constructor(private itemService: ItemService) {
     console.log("constructor(private itemService: ItemService) ");
   }
 
   getItems(): void {
-    this.itemService.getItems().then(items => this.items = items);
+    this.itemService.getItems().then(items => {this.items = items; this.filteredItems = items});
   }
 
   //add new item to item list, and call create method in item.service
@@ -34,6 +35,7 @@ export class AppComponent implements OnInit{
     this.itemService.create(title, category, medium) //the handler delegates creation of the named hero to the hero service
       .then(item => {
         this.items.unshift(item); //and then adds the new item to the array
+        this.filteredItems.unshift(item);
     });
     console.log(this.items);
     this.saveItem(this.itemService.create(title, category, medium));
@@ -53,8 +55,26 @@ export class AppComponent implements OnInit{
         .then(() => {
           this.items = this.items.filter(h => h !== item);
         });
-}
+  }
 
+/*
+  getAlbums(){
+    this.filteredItems = Object.assign([], this.items).filter(item => item.category === 'album');
+  }
+
+  getAll(){
+    this.filteredItems = Object.assign([], this.items).filter(item => this.filteredItems = item);
+  }
+*/
+assignCopy(){
+   this.filteredItems = Object.assign([], this.items);
+}
+filterItem(value){
+   if(!value) this.assignCopy(); //when nothing has typed
+   this.filteredItems = Object.assign([], this.items).filter(
+      item => item.title.toLowerCase().indexOf(value.toLowerCase()) > -1
+   )
+}
 
   ngOnInit(): void {
     this.getItems();
