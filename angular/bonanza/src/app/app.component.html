@@ -19,6 +19,8 @@
       <td>{{item.title}}</td>
       <td>{{item.category}}</td>
       <td>{{item.medium}}</td>
+      <button class="delete"
+        (click)="delete(item); $event.stopPropagation()">x</button>
     </tr>
 
   </table>

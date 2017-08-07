@@ -19,6 +19,7 @@ export class AppComponent implements OnInit{
     this.itemService.getItems().then(items => this.items = items);
   }
 
+  //add new item to item list, and call create method in item.service
   add(title: string, category: string, medium: string): void {
     title = title.trim();
     category = category.trim();
@@ -32,10 +33,28 @@ export class AppComponent implements OnInit{
 
     this.itemService.create(title, category, medium) //the handler delegates creation of the named hero to the hero service
       .then(item => {
-        this.items.unshift(item); //and then adds the new hero to the array
+        this.items.unshift(item); //and then adds the new item to the array
     });
-      console.log(this.items);
+    console.log(this.items);
+    this.saveItem(this.itemService.create(title, category, medium));
+  }
+
+  //save item on server, and call update method from item.service
+  saveItem(item): void {
+    this.itemService.update(item);
+  }
+
+  //delete item from item list, and call delete method from item.service
+  delete(item: Item): void {
+    console.log("delete method from app.component")
+    this.items = this.items.filter(h => h !== item);
+    this.itemService
+        .delete(item.id)
+        .then(() => {
+          this.items = this.items.filter(h => h !== item);
+        });
 }
+
 
   ngOnInit(): void {
     this.getItems();
