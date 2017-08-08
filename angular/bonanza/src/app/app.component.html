@@ -2,18 +2,16 @@
 <!--  <button (click)="getAll()">all</button>
   <button (click)="getAlbums()">albums</button>
 -->
-<h1 class="information">Search your item!</h1>
+<h1>Search your item!</h1>
 <input id="itemSearcher" #myInput placeholder="Item title..." [(ngModel)]="name" (input)="filterItem(myInput.value)"/>
   <table>
     <tr>
-      <th class="itemId">Id</th>
       <th class="itemTitle">Title</th>
       <th class="itemCategory">Category</th>
       <th class="itemMedium">Medium</th>
       <th class="itemOperation">Do</th>
     </tr>
     <tr>
-      <td></td>
       <td><input #itemTitle /></td>
       <td>
         <select #itemCategory required>
@@ -28,17 +26,16 @@
         </select>
       </td>
       <td>
-        <button (click)="add(itemTitle.value, itemCategory.value, itemMedium.value); itemTitle.value=''; itemCategory.value=''; itemMedium.value=''; myInput.value=''">Add</button>
+        <button class="operation save"(click)="add(itemTitle.value, itemCategory.value, itemMedium.value); itemTitle.value=''; myInput.value=''">+</button>
       </td>
     </tr>
     <tr *ngFor="let item of filteredItems">
-      <td>{{item.id}}</td>
-      <td>{{item.title}}</td>
-      <td>{{item.category}}</td>
-      <td>{{item.medium}}</td>
+      <td>{{item.id}}, {{item.title}}</td>
+      <td><span class="icon {{item.category}}" title="{{item.category}}"></span></td>
+      <td><span class="icon {{item.medium}}" title="{{item.medium}}"></span></td>
       <td>
-        <button class="delete"
-        (click)="delete(item); $event.stopPropagation()">x</button>
+        <button class="operation delete"
+        (click)="delete(item); $event.stopPropagation(); myInput.value=''">x</button>
       </td>
     </tr>
 

@@ -7,7 +7,7 @@ import 'rxjs/add/operator/toPromise'; //importing toPromise from the RxJS librar
 
 @Injectable()
 export class ItemService {
-  private itemsUrl = 'api/items';  // URL to web api
+  private itemsUrl = 'https://example.com/api/items';  // URL to web api
   private headers = new Headers({'Content-Type': 'application/json'});
 
   constructor(private http: Http) { }
