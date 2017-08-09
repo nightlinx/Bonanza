@@ -29,15 +29,16 @@
         <button class="operation save"(click)="add(itemTitle.value, itemCategory.value, itemMedium.value); itemTitle.value=''; myInput.value=''">+</button>
       </td>
     </tr>
-    <tr *ngFor="let item of filteredItems">
+    <tr *ngFor="let item of filteredItems" [class.selected]="item === selectedItem" (click)="onSelect(item)">
       <td>{{item.id}}, {{item.title}}</td>
       <td><span class="icon {{item.category}}" title="{{item.category}}"></span></td>
       <td><span class="icon {{item.medium}}" title="{{item.medium}}"></span></td>
       <td>
+        <div *ngIf="item === selectedItem">
         <button class="operation delete"
-        (click)="delete(item); $event.stopPropagation(); myInput.value=''">x</button>
+        (click)="delete(item); myInput.value=''; $event.stopPropagation()">x</button>
+      </div>
       </td>
     </tr>
-
   </table>
 </div>

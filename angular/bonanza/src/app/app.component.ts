@@ -11,9 +11,14 @@ export class AppComponent implements OnInit{
   title = 'All your games and albums';
   items: Item[];
   filteredItems: Item[];
+  selectedItem: Item;
 
   constructor(private itemService: ItemService) {
     console.log("constructor(private itemService: ItemService) ");
+  }
+
+  onSelect(item: Item): void {
+    this.selectedItem = item;
   }
 
   getItems(): void {
