@@ -1,6 +1,13 @@
+/*
+mint: e9f2e8
+orange: f4f2f2
+brown: cccbc6
+black: #626363
+*/
 div {
-    font-family: arial, sans-serif;
+  font-family: arial, sans-serif;
 }
+
 
 h1 {
   font-size: 30px;
@@ -17,6 +24,35 @@ h1 {
   width: 100%;
   max-width: 60%;
 }
+
+div.formContent{
+  height: 100px;
+  width: 100%;
+  max-width: 70%;
+  margin: 20px auto 20px auto;
+  background-color: #e9f2e8;
+  box-shadow: 1px 0.5px 0.5px 0.5px rgba(0, 0, 0, 0.1), 1px 1px 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+div.formContent #inputTitle{
+  margin: 10px;
+  display: inline-block;
+  float: left;
+  width: 60%;
+}
+div.formContent #inputCategory{
+  margin: 10px;
+  display: inline-block;
+  float: left;
+  width: 20%;
+}
+div.formContent #inputMedium{
+  margin: 10px;
+  display: inline-block;
+  width: 10%;
+  float: left;
+}
+
 
 button {
   cursor: pointer;
@@ -61,37 +97,44 @@ button.operation.delete:active {
 }
 
 table {
-    border-collapse: separate;
-    border: 0;
-    border-spacing: 0;
-    width: 100%;
-    max-width: 70%;
-    margin: 20px auto 20px auto;
+  background-color: white;
+  border-collapse: separate;
+  border: 0;
+  border-spacing: 0;
+  width: 100%;
+  max-width: 70%;
+  margin: 20px auto 20px auto;
+  box-shadow: 1px 0.5px 0.5px 0.5px rgba(0, 0, 0, 0.1), 1px 1px 1px 1px rgba(0, 0, 0, 0.05);
 }
 
 table th{
-    border: 1px solid #dddddd;
-    background-color: #f4f2f2;
-    text-align: center;
-    padding: 8px;
+  border-bottom: 1px solid #dddddd;
+  background-color: #f4f2f2;
+  text-align: center;
+  padding: 8px;
 }
 
 table td{
   border: none;
-  border-bottom: 1px solid #dddddd;
+  border-bottom: 0px solid #dddddd;
   text-align: left;
   padding: 5px;
   cursor: pointer;
 }
 
+table td input {
+  box-sizing: border-box; /*genialne! Inaczej input wychodzi poza tabelke*/
+  width: 100%;
+  padding: 5px;
+}
 
 table tr:hover {
     transition-duration: 0.4s;
-    background-color: #f4f2f2;
+    background-color: #e9f2e8;
 }
 
 table tr.selected {
-  background-color: #f4f2f2;
+  background-color: #e9f2e8;
 }
 
 .icon {
@@ -117,19 +160,21 @@ table tr.selected {
     background-image:url('../assets/icons/album.png');
 }
 
-.itemTitle{
-    width: 75%;
+.headerTitle{
+    width: 70%;
 }
-.itemCategory{
-    width: 10%;
+.headerCategory{
+    width: 15%;
 }
-.itemMedium{
-    width: 10%;
+.headerMedium{
+    width: 15%;
+}
+.headerOperation {
+  max-width: 30px;
+  min-width: 30px;
+  border-left: 1px solid #dddddd;
 }
 
-
-table td input {
-  box-sizing: border-box; /*genialne! Inaczej input wychodzi poza tabelke*/
-  width: 100%;
-  padding: 5px;
+table tr td.itemOperation {
+  border-left: 1px solid #dddddd;
 }
