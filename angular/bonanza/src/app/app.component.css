@@ -1,13 +1,24 @@
 /*
 mint: e9f2e8
+dark mint: #9bce9a
 orange: f4f2f2
 brown: cccbc6
 black: #626363
+grey : dddddd
+blue light:
 */
 div {
   font-family: arial, sans-serif;
 }
 
+input, select {
+  border: 1px solid #dddddd;
+  border-radius: 4px;
+}
+
+select{
+  color: #626363;
+}
 
 h1 {
   font-size: 30px;
@@ -25,34 +36,23 @@ h1 {
   max-width: 60%;
 }
 
-div.formContent{
-  height: 100px;
+table.formContent{
   width: 100%;
   max-width: 70%;
   margin: 20px auto 20px auto;
+  padding: 10px;
   background-color: #e9f2e8;
   box-shadow: 1px 0.5px 0.5px 0.5px rgba(0, 0, 0, 0.1), 1px 1px 1px 1px rgba(0, 0, 0, 0.05);
 }
 
-div.formContent #inputTitle{
-  margin: 10px;
-  display: inline-block;
-  float: left;
-  width: 60%;
-}
-div.formContent #inputCategory{
-  margin: 10px;
-  display: inline-block;
-  float: left;
-  width: 20%;
-}
-div.formContent #inputMedium{
-  margin: 10px;
-  display: inline-block;
-  width: 10%;
-  float: left;
+table.formContent td {
+    text-align: center;
 }
 
+.headerCategory select, .headerMedium select {
+  width: 100%;
+  height: 28px;
+}
 
 button {
   cursor: pointer;
@@ -61,14 +61,15 @@ button {
 }
 
 button.operation{
-  background-color: #dbd9d9;
-  color: white;
+  background-color: white;
+  color: #dbd9d9;
   width: 30px;
   height: 30px;
   margin: 0 auto;
   display: block;
   font-size: 17px;
   font-weight: bold;
+  border: 1px solid #dddddd;
 }
 
 button:focus{
@@ -77,22 +78,21 @@ button:focus{
 
 button.operation:hover{
     transition-duration: 0.4s;
+    color: white;
 }
 
 button.operation.save:hover {
-  background-color: #59c940;
+  background-color: #9bce9a;
 }
 button.operation.save:active {
-  background-color: #317023;
   color: #828282;
 }
 
 button.operation.delete:hover {
-  background-color: #d81e3a;
+  background-color: #e8b4ab;
 }
 
 button.operation.delete:active {
-  background-color: #8e1c2d;
   color: #828282;
 }
 
@@ -109,7 +109,7 @@ table {
 
 table th{
   border-bottom: 1px solid #dddddd;
-  background-color: #f4f2f2;
+  background-color: #e9f2e8;
   text-align: center;
   padding: 8px;
 }
@@ -130,11 +130,11 @@ table td input {
 
 table tr:hover {
     transition-duration: 0.4s;
-    background-color: #e9f2e8;
+    background-color: #f4f2f2;
 }
 
 table tr.selected {
-  background-color: #e9f2e8;
+  background-color: #fcf1ed;
 }
 
 .icon {

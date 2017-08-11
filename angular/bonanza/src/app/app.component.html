@@ -4,46 +4,50 @@
 -->
 <h1>Search your item!</h1>
 <input id="itemSearcher" #myInput placeholder="Item title..." [(ngModel)]="name" (input)="filterItem(myInput.value)"/>
+<!--
 <div class="formContent">
-  <input id="inputTitle" #itemTitle />
-  <select id="inputCategory" #itemCategory required>
+  <input class="input title" #itemTitle />
+  <select class="input category" #itemCategory required>
     <option value="game">game</option>
     <option value="album">album</option>
   </select>
-  <select id="inputMedium" #itemMedium required>
+  <select class="input medium" #itemMedium required>
     <option value="digital">digital</option>
     <option value="physical">physical</option>
   </select>
     <button class="operation save"(click)="add(itemTitle.value, itemCategory.value, itemMedium.value); itemTitle.value=''; myInput.value=''">+</button>
 </div>
+-->
+<table class="formContent">
+  <tr>
+    <td class="headerTitle"><input #itemTitle placeholder="Title"/></td>
+    <td class="headerCategory">
+      <select #itemCategory required>
+        <option value="game">game</option>
+        <option value="album">album</option>
+      </select>
+    </td>
+    <td class="headerMedium">
+      <select #itemMedium required>
+        <option value="digital">digital</option>
+        <option value="physical">physical</option>
+      </select>
+    </td>
+    <td class="headerOperation">
+      <button class="operation save"(click)="add(itemTitle.value, itemCategory.value, itemMedium.value); itemTitle.value=''; myInput.value=''">+</button>
+    </td>
+  </tr>
+</table>
 
-  <table>
+  <table class="listContent">
     <tr>
       <th class="headerTitle">Title</th>
       <th class="headerCategory">Category</th>
       <th class="headerMedium">Medium</th>
       <th class="headerOperation">Do</th>
     </tr>
-    <!--<tr>
-      <td><input #itemTitle /></td>
-      <td>
-        <select #itemCategory required>
-          <option value="game">game</option>
-          <option value="album">album</option>
-        </select>
-      </td>
-      <td>
-        <select #itemMedium required>
-          <option value="digital">digital</option>
-          <option value="physical">physical</option>
-        </select>
-      </td>
-      <td>
-        <button class="operation save"(click)="add(itemTitle.value, itemCategory.value, itemMedium.value); itemTitle.value=''; myInput.value=''">+</button>
-      </td>
-    </tr>  -->
     <tr *ngFor="let item of filteredItems" [class.selected]="item === selectedItem" (click)="onSelect(item)">
-      <td class="itemTitle">{{item.id}}, {{item.title}}</td>
+      <td class="itemTitle">{{item.title}}</td>
       <td class="itemCategory"><span class="icon {{item.category}}" title="{{item.category}}"></span></td>
       <td class="itemMedium"><span class="icon {{item.medium}}" title="{{item.medium}}"></span></td>
       <td class="itemOperation">
