@@ -2,8 +2,9 @@
 <!--  <button (click)="getAll()">all</button>
   <button (click)="getAlbums()">albums</button>
 -->
-<h1>Search your item!</h1>
-<input id="itemSearcher" #myInput placeholder="Item title..." [(ngModel)]="name" (input)="filterItem(myInput.value)"/>
+<nav class="top-bar">
+  <input id="itemSearcher" #myInput placeholder="Search item..." [(ngModel)]="name" (input)="filterItem(myInput.value)"/>
+</nav>
 <!--
 <div class="formContent">
   <input class="input title" #itemTitle />
@@ -22,13 +23,13 @@
   <tr>
     <td class="headerTitle"><input #itemTitle placeholder="Title"/></td>
     <td class="headerCategory">
-      <select #itemCategory required>
+      <select #itemCategory>
         <option value="game">game</option>
         <option value="album">album</option>
       </select>
     </td>
     <td class="headerMedium">
-      <select #itemMedium required>
+      <select #itemMedium>
         <option value="digital">digital</option>
         <option value="physical">physical</option>
       </select>
@@ -41,7 +42,10 @@
 
   <table class="listContent">
     <tr>
-      <th class="headerTitle">Title</th>
+      <th class="headerTitle">
+        <span><button (click)="sortByTitle()" class="icon arrow up">^</button></span>
+        <span>Title</span>
+        <span><button (click)="sortByTitleDesc()" class="icon arrow down">v</button></span>
       <th class="headerCategory">Category</th>
       <th class="headerMedium">Medium</th>
       <th class="headerOperation">Do</th>

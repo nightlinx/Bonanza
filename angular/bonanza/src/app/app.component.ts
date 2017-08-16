@@ -84,4 +84,32 @@ filterItem(value){
   ngOnInit(): void {
     this.getItems();
   }
+
+  sortByTitle() {
+    this.assignCopy();
+    this.filteredItems.sort( function(item1, item2) {
+    if ( item1.title.toLowerCase() < item2.title.toLowerCase() ){
+      return -1;
+    }else if( item1.title.toLowerCase() > item2.title.toLowerCase() ){
+        return 1;
+    }else{
+      return 0;
+    }
+  });
+  }
+
+  sortByTitleDesc() {
+    this.assignCopy();
+    this.filteredItems.sort( function(item1, item2) {
+    if ( item1.title.toLowerCase() > item2.title.toLowerCase() ){
+      return -1;
+    }else if( item1.title.toLowerCase() < item2.title.toLowerCase() ){
+        return 1;
+    }else{
+      return 0;
+    }
+  });
+}
+
+
 }

@@ -1,4 +1,5 @@
 /*
+background: #edf3f7
 mint: e9f2e8
 dark mint: #9bce9a
 orange: f4f2f2
@@ -6,18 +7,54 @@ brown: cccbc6
 black: #626363
 grey : dddddd
 blue light:
+
+black: rgb(42,49,50)
+very white blue: rgb(209,225,233)
+white blue: rgb(74,125,146)
+blue: rgb(53,110,132)
+black blue: rgb(35, 83, 103)
+balck black blue: rgb(28,69,88)
+cream: rgb(240,240,340)
+hborders: rgb(221,221,221)
+background: rgb(234,234,234)
+
 */
 div {
   font-family: arial, sans-serif;
 }
 
+nav.top-bar {
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  height: 60px;
+  background-color:rgb(42,49,50);
+}
+
 input, select {
-  border: 1px solid #dddddd;
   border-radius: 4px;
+  background-color: rgb(35, 83, 103);
+  border: 2px solid rgb(28,69,88);
+  border-top: none;
+  border-left: none;
+  color: rgb(160,160,160);
+}
+
+input:hover, input:focus, select:hover, select:focus{
+  background-color: rgb(28,69,88);
+  color: #dddddd;
 }
 
 select{
-  color: #626363;
+  cursor: pointer;
+  color: rgb(160,160,160);
+  -webkit-appearance: none;
+   -moz-appearance: none;
+        appearance: none;
+}
+
+select option: hover{
+  background-color: black;
 }
 
 h1 {
@@ -29,19 +66,28 @@ h1 {
 
 #itemSearcher {
   display: block;
-  margin: 0px auto 50px auto;
+  margin: 15px auto 15px auto;
   padding: 5px;
   font-size: 15px;
   width: 100%;
   max-width: 60%;
+  background-color: #edf3f7;
+  color: rgb(28,69,88);
+  border: 3px solid #dddddd;
+}
+
+#itemSearcher:hover{
+  border: 3px solid rgb(74,125,146);
 }
 
 table.formContent{
+  height: 70px;
   width: 100%;
-  max-width: 70%;
-  margin: 20px auto 20px auto;
+  max-width: 80%;
+  margin: 60px auto 20px auto;
   padding: 10px;
-  background-color: #e9f2e8;
+  background-color: rgb(53,110,132);
+  border: 3px solid rgb(74,125,146);
   box-shadow: 1px 0.5px 0.5px 0.5px rgba(0, 0, 0, 0.1), 1px 1px 1px 1px rgba(0, 0, 0, 0.05);
 }
 
@@ -51,18 +97,18 @@ table.formContent td {
 
 .headerCategory select, .headerMedium select {
   width: 100%;
-  height: 28px;
+  height: 32px;
+  padding-left: 5px;
 }
 
 button {
   cursor: pointer;
   border: none;
-  border-radius: 50%;
 }
 
 button.operation{
   background-color: white;
-  color: #dbd9d9;
+  color: white;
   width: 30px;
   height: 30px;
   margin: 0 auto;
@@ -70,6 +116,7 @@ button.operation{
   font-size: 17px;
   font-weight: bold;
   border: 1px solid #dddddd;
+  border-radius: 50%;
 }
 
 button:focus{
@@ -81,20 +128,23 @@ button.operation:hover{
     color: white;
 }
 
-button.operation.save:hover {
-  background-color: #9bce9a;
-}
-button.operation.save:active {
-  color: #828282;
-}
-
-button.operation.delete:hover {
-  background-color: #e8b4ab;
+button.operation{
+  background-color: rgb(74,125,146);
+  border: none;
+  box-shadow: 1px 1px 1px 0.5px rgba(0, 0, 0, 0.1), 1px 1px 1px 1px rgba(0, 0, 0, 0.05);
+  border-right: 2px solid rgb(35, 83, 103);
+  border-bottom: 2px solid rgb(35, 83, 103);
 }
 
-button.operation.delete:active {
-  color: #828282;
+button.operation:hover {
+  background-color: rgb(126,171,190);
 }
+
+button.operation:active {
+  box-shadow: none;
+  background-color: rgb(35, 83, 103);
+}
+
 
 table {
   background-color: white;
@@ -102,16 +152,18 @@ table {
   border: 0;
   border-spacing: 0;
   width: 100%;
-  max-width: 70%;
+  max-width: 80%;
   margin: 20px auto 20px auto;
   box-shadow: 1px 0.5px 0.5px 0.5px rgba(0, 0, 0, 0.1), 1px 1px 1px 1px rgba(0, 0, 0, 0.05);
 }
 
 table th{
-  border-bottom: 1px solid #dddddd;
-  background-color: #e9f2e8;
+  border-top: 3px solid rgb(74,125,146);
+  border-bottom: 3px solid rgb(74,125,146);
+  background-color: rgb(53,110,132);
   text-align: center;
   padding: 8px;
+  color: #dddddd;
 }
 
 table td{
@@ -125,16 +177,16 @@ table td{
 table td input {
   box-sizing: border-box; /*genialne! Inaczej input wychodzi poza tabelke*/
   width: 100%;
-  padding: 5px;
+  padding: 7px;
 }
 
-table tr:hover {
+table.listContent tr:hover {
     transition-duration: 0.4s;
-    background-color: #f4f2f2;
+    background-color: #eeeeee;
 }
 
-table tr.selected {
-  background-color: #fcf1ed;
+table tr.selected, table tr:focus {
+  background-color:rgb(209,225,233);
 }
 
 .icon {
@@ -144,6 +196,17 @@ table tr.selected {
   margin: 0px auto;
   width: 30px;
   height: 30px;
+}
+
+.icon.arrow{
+  background-color: inherit;
+  display: inline-block;
+}
+.icon.arrow.up{
+  background-image:url('../assets/icons/up-arrow.png');
+}
+.icon.arrow.down{
+  background-image:url('../assets/icons/down-arrow.png');
 }
 
 .icon.digital {
@@ -161,18 +224,27 @@ table tr.selected {
 }
 
 .headerTitle{
+    border-left: 3px solid rgb(74,125,146);
     width: 70%;
+    min-width: 120px;
 }
+
 .headerCategory{
     width: 15%;
+    min-width: 60px;
 }
 .headerMedium{
     width: 15%;
+    min-width: 70px;
 }
 .headerOperation {
   max-width: 30px;
   min-width: 30px;
-  border-left: 1px solid #dddddd;
+  border-right: 3px solid rgb(74,125,146);
+}
+
+table tr td.itemTitle:hover {
+  border-left: 3px solid rgb(74,125,146);
 }
 
 table tr td.itemOperation {
