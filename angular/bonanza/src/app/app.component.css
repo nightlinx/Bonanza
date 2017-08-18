@@ -19,19 +19,45 @@ hborders: rgb(221,221,221)
 background: rgb(234,234,234)
 
 */
-div {
-  font-family: arial, sans-serif;
-}
-
 nav.top-bar {
   position: fixed;
   top: 0px;
   width: 100%;
-  height: 60px;
+  height: 25px;
   background-color:rgb(42,49,50);
 }
 
+span.logo {
+  font-family: 'VT323', monospace;
+  color: white;
+  font-weight: bold;
+  font-size: 25px;
+  min-width: 25vh;
+  width: 15%;
+  padding: 20px 0 20px 5px;
+  color: rgb(240,240,340);
+  cursor: pointer;
+}
+
+#itemSearcher {
+  display: block;
+  margin: 45px auto 20px auto;
+  padding: 5px;
+  font-size: 12px;
+  width: 80%;
+  max-width: 70%;
+  background-color: #edf3f7;
+  color: rgb(28,69,88);
+  border: 3px solid #dddddd;
+}
+
+#itemSearcher:hover, #itemSearcher:focus{
+  border: 3px solid rgb(74,125,146);
+}
+
 input, select {
+  font-family: "Arial", sans-serif;
+  font-size: 12px;
   border-radius: 4px;
   background-color: rgb(35, 83, 103);
   border: 2px solid rgb(28,69,88);
@@ -57,34 +83,11 @@ select option: hover{
   background-color: black;
 }
 
-h1 {
-  font-size: 30px;
-  text-align: center;
-  margin-top: 50px;
-  margin-bottom: 30px;
-}
-
-#itemSearcher {
-  display: block;
-  margin: 15px auto 15px auto;
-  padding: 5px;
-  font-size: 15px;
-  width: 100%;
-  max-width: 60%;
-  background-color: #edf3f7;
-  color: rgb(28,69,88);
-  border: 3px solid #dddddd;
-}
-
-#itemSearcher:hover{
-  border: 3px solid rgb(74,125,146);
-}
-
 table.formContent{
   height: 70px;
   width: 100%;
   max-width: 80%;
-  margin: 60px auto 20px auto;
+  margin: 0 auto 0 auto;
   padding: 10px;
   background-color: rgb(53,110,132);
   border: 3px solid rgb(74,125,146);
@@ -97,8 +100,9 @@ table.formContent td {
 
 .headerCategory select, .headerMedium select {
   width: 100%;
-  height: 32px;
-  padding-left: 5px;
+  height: 31px;
+  padding-left: 0px;
+  font-size: 10px;
 }
 
 button {
@@ -136,6 +140,10 @@ button.operation{
   border-bottom: 2px solid rgb(35, 83, 103);
 }
 
+button.operation.delete{
+  border: none;
+}
+
 button.operation:hover {
   background-color: rgb(126,171,190);
 }
@@ -170,7 +178,7 @@ table td{
   border: none;
   border-bottom: 0px solid #dddddd;
   text-align: left;
-  padding: 5px;
+  padding: 3px;
   cursor: pointer;
 }
 
@@ -194,8 +202,8 @@ table tr.selected, table tr:focus {
   background-size: auto 100%;
   display: block;
   margin: 0px auto;
-  width: 30px;
-  height: 30px;
+  width: 25px;
+  height: 25px;
 }
 
 .icon.arrow{
@@ -226,25 +234,32 @@ table tr.selected, table tr:focus {
 .headerTitle{
     border-left: 3px solid rgb(74,125,146);
     width: 70%;
-    min-width: 120px;
+    min-width: 100px;
 }
 
 .headerCategory{
     width: 15%;
-    min-width: 60px;
+    min-width: 50px;
 }
 .headerMedium{
     width: 15%;
-    min-width: 70px;
+    min-width: 50px;
 }
 .headerOperation {
-  max-width: 30px;
-  min-width: 30px;
+  max-width: 25px;
+  min-width: 25px;
   border-right: 3px solid rgb(74,125,146);
+}
+
+table tr td.itemTitle{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 15px;
 }
 
 table tr td.itemTitle:hover {
   border-left: 3px solid rgb(74,125,146);
+  padding-left: 13px;
 }
 
 table tr td.itemOperation {

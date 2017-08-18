@@ -3,8 +3,9 @@
   <button (click)="getAlbums()">albums</button>
 -->
 <nav class="top-bar">
-  <input id="itemSearcher" #myInput placeholder="Search item..." [(ngModel)]="name" (input)="filterItem(myInput.value)"/>
+  <span contenteditable class="logo"><span style="color: rgb(74,125,146);">B</span>onanza</span>
 </nav>
+  <input id="itemSearcher" #myInput placeholder="Search item..." [(ngModel)]="name" (input)="filterItem(myInput.value)"/>
 <!--
 <div class="formContent">
   <input class="input title" #itemTitle />
@@ -24,12 +25,14 @@
     <td class="headerTitle"><input #itemTitle placeholder="Title"/></td>
     <td class="headerCategory">
       <select #itemCategory>
+        <option value="" hidden>category</option>
         <option value="game">game</option>
         <option value="album">album</option>
       </select>
     </td>
     <td class="headerMedium">
       <select #itemMedium>
+        <option value="" hidden>medium</option>
         <option value="digital">digital</option>
         <option value="physical">physical</option>
       </select>
