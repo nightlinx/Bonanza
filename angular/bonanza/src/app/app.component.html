@@ -4,6 +4,8 @@
 -->
 <nav class="top-bar">
   <span contenteditable class="logo"><span style="color: rgb(74,125,146);">B</span>onanza</span>
+  <a routerLink="/about">ABOUT</a>
+  <router-outlet></router-outlet>
 </nav>
   <input id="itemSearcher" #myInput placeholder="Search item..." [(ngModel)]="name" (input)="filterItem(myInput.value)"/>
 <!--

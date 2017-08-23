@@ -113,34 +113,33 @@ button {
 button.operation{
   background-color: white;
   color: white;
-  width: 30px;
-  height: 30px;
+  width: 28px;
+  height: 28px;
   margin: 0 auto;
   display: block;
   font-size: 17px;
   font-weight: bold;
   border: 1px solid #dddddd;
   border-radius: 50%;
+  border: none;
+  box-shadow: 1px 1px 1px 0.5px rgba(0, 0, 0, 0.1), 1px 1px 1px 1px rgba(0, 0, 0, 0.05);
+  padding: 0px;
 }
 
 button:focus{
   padding: 0px;
 }
 
-button.operation:hover{
-    transition-duration: 0.4s;
-    color: white;
+button.operation.save{
+  background-color: #E68863;
 }
 
-button.operation{
-  background-color: rgb(74,125,146);
-  border: none;
-  box-shadow: 1px 1px 1px 0.5px rgba(0, 0, 0, 0.1), 1px 1px 1px 1px rgba(0, 0, 0, 0.05);
-  border-right: 2px solid rgb(35, 83, 103);
-  border-bottom: 2px solid rgb(35, 83, 103);
+button.operation.save:hover{
+  background-color: #BA6E50;
 }
 
 button.operation.delete{
+  background-color: rgb(74,125,146);
   border: none;
 }
 
