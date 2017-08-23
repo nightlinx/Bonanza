@@ -13,15 +13,18 @@ import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService }  from './services/in-memory-data.service';
 
 import { AboutComponent } from './components/about/about.component';
+import { ItemsComponent } from './components/items/items.component';
 
 const appRoutes: Routes = [
-  {path:'about', component:AboutComponent}
+  {path:'about', component: AboutComponent},
+  {path:'item', component: ItemsComponent}
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
-    AboutComponent
+    AboutComponent,
+    ItemsComponent
   ],
   imports: [
     BrowserModule,
