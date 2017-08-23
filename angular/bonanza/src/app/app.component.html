@@ -1,70 +1,7 @@
 <div style="overflow-x:auto;">
-<!--  <button (click)="getAll()">all</button>
-  <button (click)="getAlbums()">albums</button>
--->
 <nav class="top-bar">
-  <span contenteditable class="logo"><span style="color: rgb(74,125,146);">B</span>onanza</span>
-  <a routerLink="/about">ABOUT</a>
+  <span routerLink="/about" contenteditable class="logo"><span style="color: rgb(74,125,146);">B</span>onanza</span>
+  <a routerLink="/items" style="color: white">Your items</a>
   <router-outlet></router-outlet>
 </nav>
-  <input id="itemSearcher" #myInput placeholder="Search item..." [(ngModel)]="name" (input)="filterItem(myInput.value)"/>
-<!--
-<div class="formContent">
-  <input class="input title" #itemTitle />
-  <select class="input category" #itemCategory required>
-    <option value="game">game</option>
-    <option value="album">album</option>
-  </select>
-  <select class="input medium" #itemMedium required>
-    <option value="digital">digital</option>
-    <option value="physical">physical</option>
-  </select>
-    <button class="operation save"(click)="add(itemTitle.value, itemCategory.value, itemMedium.value); itemTitle.value=''; myInput.value=''">+</button>
-</div>
--->
-<table class="formContent">
-  <tr>
-    <td class="headerTitle"><input #itemTitle placeholder="Title"/></td>
-    <td class="headerCategory">
-      <select #itemCategory>
-        <option value="" hidden>category</option>
-        <option value="game">game</option>
-        <option value="album">album</option>
-      </select>
-    </td>
-    <td class="headerMedium">
-      <select #itemMedium>
-        <option value="" hidden>medium</option>
-        <option value="digital">digital</option>
-        <option value="physical">physical</option>
-      </select>
-    </td>
-    <td class="headerOperation">
-      <button class="operation save"(click)="add(itemTitle.value, itemCategory.value, itemMedium.value); itemTitle.value=''; myInput.value=''">+</button>
-    </td>
-  </tr>
-</table>
-
-  <table class="listContent">
-    <tr>
-      <th class="headerTitle">
-        <span><button (click)="sortByTitle()" class="icon arrow up">^</button></span>
-        <span>Title</span>
-        <span><button (click)="sortByTitleDesc()" class="icon arrow down">v</button></span>
-      <th class="headerCategory">Category</th>
-      <th class="headerMedium">Medium</th>
-      <th class="headerOperation">Do</th>
-    </tr>
-    <tr *ngFor="let item of filteredItems" [class.selected]="item === selectedItem" (click)="onSelect(item)">
-      <td class="itemTitle">{{item.title}}</td>
-      <td class="itemCategory"><span class="icon {{item.category}}" title="{{item.category}}"></span></td>
-      <td class="itemMedium"><span class="icon {{item.medium}}" title="{{item.medium}}"></span></td>
-      <td class="itemOperation">
-        <div *ngIf="item === selectedItem">
-        <button class="operation delete"
-        (click)="delete(item); myInput.value=''; $event.stopPropagation()">x</button>
-      </div>
-      </td>
-    </tr>
-  </table>
 </div>

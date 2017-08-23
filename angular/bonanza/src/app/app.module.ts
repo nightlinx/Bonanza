@@ -17,7 +17,7 @@ import { ItemsComponent } from './components/items/items.component';
 
 const appRoutes: Routes = [
   {path:'about', component: AboutComponent},
-  {path:'item', component: ItemsComponent}
+  {path:'items', component: ItemsComponent}
 ];
 
 @NgModule({

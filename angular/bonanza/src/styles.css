@@ -3,7 +3,7 @@ body{
   margin: 0;
   background-color: rgb(35, 83, 103);
   color: #626363;
-  font-family: "Arial", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 12px;
 }
 @font-face {
