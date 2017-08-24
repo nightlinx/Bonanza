@@ -1,6 +1,58 @@
 h1{
-  font-size: 30px;
+  font-family: 'Indie Flower', cursive;
+  font-family: 'VT323', monospace;
+  margin: 0px auto 20px auto;
+  font-size: 40px;
   color: white;
   text-align: center;
-  font-family: 'Indie Flower', cursive;
+  text-shadow: 1px 1px 1px black;
+}
+
+div.about{
+  display: block;
+  margin: 50px auto;
+  width: auto;
+  max-width: 600px;
+  background-color: rgb(53,110,132);
+  border: 3px solid rgb(74,125,146);
+  padding: 20px;
+  box-shadow: 1px 0.5px 0.5px 0.5px rgba(0, 0, 0, 0.1), 1px 1px 1px 1px rgba(0, 0, 0, 0.05);
+  font-size: 15px;
+  font-family: 'Raleway', sans-serif;
+}
+
+div.about p {
+  letter-spacing: 1px;
+  color: white;
+  text-align: center;
+ }
+
+div.about button {
+  font-size: 15px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: bold;
+  display: block;
+  text-decoration: none;
+  background-color: #E68863;
+  color: white;
+  margin: 20px auto;
+  padding: 10px;
+  width: 130px;
+  border: none;
+  border-radius: 7px;
+  border: 2px solid #BA6E50;
+  cursor: pointer;
+  text-shadow: 1px 1px 1px #BA6E50;
+}
+
+div.about button:hover{
+  background-color: #BA6E50;
+}
+
+
+img {
+  display: block;
+  margin: 0 auto;
+  width: 200px;
+  height: 200px;
 }

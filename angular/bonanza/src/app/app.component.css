@@ -23,7 +23,7 @@ dark orange: BA6E50;
 */
 
 div {
-  overflow-y: auto;
+  overflow-y: visible;
 }
 
 nav.top-bar {
