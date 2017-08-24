@@ -21,6 +21,11 @@ background: rgb(234,234,234)
 orange: E68863;
 dark orange: BA6E50;
 */
+
+div {
+  overflow-y: auto;
+}
+
 nav.top-bar {
   position: fixed;
   top: 0px;
