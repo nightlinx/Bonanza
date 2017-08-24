@@ -1,7 +1,7 @@
 h1{
   font-family: 'Indie Flower', cursive;
   font-family: 'VT323', monospace;
-  margin: 0px auto 20px auto;
+  margin: 0px auto 15px auto;
   font-size: 40px;
   color: white;
   text-align: center;
@@ -10,7 +10,7 @@ h1{
 
 div.about{
   display: block;
-  margin: 50px auto;
+  margin: 30px auto 0 auto;
   width: auto;
   max-width: 600px;
   background-color: rgb(53,110,132);
@@ -25,6 +25,7 @@ div.about p {
   letter-spacing: 1px;
   color: white;
   text-align: center;
+  line-height: 150%;
  }
 
 div.about button {
@@ -53,6 +54,6 @@ div.about button:hover{
 img {
   display: block;
   margin: 0 auto;
-  width: 200px;
-  height: 200px;
+  height: 150px;
+  cursor: pointer;
 }
