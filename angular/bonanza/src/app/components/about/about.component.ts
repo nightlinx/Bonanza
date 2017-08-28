@@ -20,6 +20,8 @@ export class AboutComponent implements OnInit {
       "../../../assets/grzyb_mario.gif",
       "../../../assets/kirby.gif",
       "../../../assets/donkey_kong.gif",
+      "../../../assets/charmander.gif",
+      "../../../assets/link_zelda.gif",
      ];
   }
 

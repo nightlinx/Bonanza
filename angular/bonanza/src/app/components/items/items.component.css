@@ -77,6 +77,90 @@ table.formContent{
   box-shadow: 1px 0.5px 0.5px 0.5px rgba(0, 0, 0, 0.1), 1px 1px 1px 1px rgba(0, 0, 0, 0.05);
 }
 
+/*responsive start*/
+div.formContent{
+  width: 100%;
+  max-width: 80%;
+  margin: 20px auto 20px auto;
+  padding: 10px;
+  background-color: rgb(53,110,132);
+  border: 3px solid rgb(74,125,146);
+  box-shadow: 1px 0.5px 0.5px 0.5px rgba(0, 0, 0, 0.1), 1px 1px 1px 1px rgba(0, 0, 0, 0.05);
+
+  box-sizing: border-box;
+  display: grid;
+  grid-gap: 5px;
+  grid-template-columns:  42% 42% auto;
+  grid-template-areas:
+     "title title operation"
+     "category medium operation"
+}
+
+@media only screen and (min-width: 600px)  {
+div.formContent {
+  width: 100%;
+  max-width: 80%;
+  margin: 20px auto 20px auto;
+  padding: 10px;
+  background-color: rgb(53,110,132);
+  border: 3px solid rgb(74,125,146);
+  box-shadow: 1px 0.5px 0.5px 0.5px rgba(0, 0, 0, 0.1), 1px 1px 1px 1px rgba(0, 0, 0, 0.05);
+
+  box-sizing: border-box;
+  display: grid;
+  grid-gap: 5px;
+  grid-template-columns: auto 20% 20% 5%;
+  grid-template-areas:
+     "title category medium operation"
+}
+}
+
+
+.box {
+  box-sizing: border-box;
+  color: #fff;
+  border-radius: 5px;
+  font-size: 150%;
+}
+
+.title{
+  padding-left: 10px;
+  grid-area: title;
+  font-size: 110%;
+  height: 30px;
+}
+
+.medium{
+  grid-area: medium;
+}
+
+.category{
+  grid-area: category;
+}
+
+.category, .medium{
+  height: 30px;
+  padding-left: 5px;
+  font-family: "Arial", sans-serif;
+  font-size: 12px;
+  border-radius: 4px;
+  background-color: rgb(35, 83, 103);
+  border: 2px solid rgb(28,69,88);
+  border-top: none;
+  border-left: none;
+  color: rgb(160,160,160);
+}
+
+.operation{
+  display: block;
+  margin: auto 0 auto 0;
+  grid-area: operation;
+  padding-left: none;
+}
+
+
+
+/*responsive end*/
 table.formContent td {
     text-align: center;
 }

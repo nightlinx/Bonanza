@@ -2,28 +2,22 @@
 
 <input id="itemSearcher" #myInput placeholder="Search item..." [(ngModel)]="name" (input)="filterItem(myInput.value)"/>
 
-<table class="formContent">
-  <tr>
-    <td class="headerTitle"><input #itemTitle placeholder="Title"/></td>
-    <td class="headerCategory">
-      <select #itemCategory>
-        <option value="" hidden>category</option>
-        <option value="game">game</option>
-        <option value="album">album</option>
-      </select>
-    </td>
-    <td class="headerMedium">
-      <select #itemMedium>
-        <option value="" hidden>medium</option>
-        <option value="digital">digital</option>
-        <option value="physical">physical</option>
-      </select>
-    </td>
-    <td class="headerOperation">
-      <button class="operation save"(click)="add(itemTitle.value, itemCategory.value, itemMedium.value); itemTitle.value=''; myInput.value=''">+</button>
-    </td>
-  </tr>
-</table>
+<div class="formContent">
+  <input class="box title" #itemTitle placeholder="Title"/>
+    <select class="box category" #itemCategory>
+      <option value="" hidden>category</option>
+      <option value="game">game</option>
+      <option value="album">album</option>
+    </select>
+    <select class="box medium" #itemMedium>
+      <option value="" hidden>medium</option>
+      <option value="digital">digital</option>
+      <option value="physical">physical</option>
+    </select>
+    <div class="box operation">
+    <button class="box operation save"(click)="add(itemTitle.value, itemCategory.value, itemMedium.value); itemTitle.value=''; myInput.value=''">+</button>
+  </div>
+</div>
 
   <table class="listContent">
     <tr>
